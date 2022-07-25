@@ -27,7 +27,7 @@
 [GET] - Buscar saldo  da conta - /bank/get-balance/:id
 <br/>
 
-##Toda parte de transferências bancárias será realizada por um micro-serviço que terá um serviço de fila.
+**Toda parte de transferências bancárias será realizada por um micro-serviço que terá um serviço de fila.**
 
 **Tecnologias utilizadas**
 
