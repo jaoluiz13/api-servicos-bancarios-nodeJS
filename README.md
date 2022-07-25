@@ -1,32 +1,40 @@
 **ROTAS DOS SERVIÇOS**
 
-POST -cadastro de usuario bancario - /bank/cad-user
+
+[POST] - Cadastro de usuário bancário - /bank/cad-user
 <br/>
-POST -cadastro de conta bancaria - /bank/cad-acc
+
+[POST] - Cadastro de conta bancária - /bank/cad-acc
 <br/>
-GET  -listar contas dos usuarios - /bank/get-user/:id
+
+`{Cada Usuário terá apenas uma conta bancaria vinculada ao seu CPF}`
+
+[GET]  - Listar contas dos usuários - /bank/get-user/:id
 <br/>
-GET  -listar contas bancarias de um usuario - /bank/get-acc/:id
+
+[PUT]  - Editar usuário - /bank/edit-user
 <br/>
-PUT  -editar usuario - /bank/edit-user
+[PUT]  - Editar conta bancária - /bank/edit-acc
 <br/>
-PUT  -editar conta bancaria - /bank/edit-acc
+[DELETE] - Deletar usuário - /bank/delete-user/:id
 <br/>
-DELETE -deletar usuario - /bank/delete-user/:id
+[DELETE] - Deletar conta bancária - /bank/delete-acc/:id
 <br/>
-DELETE -deletar conta bancaria - /bank/delete-acc/:id
+`{Só é possível deletar um usuário se não existir contas vinculadas a ele}`
+
+[POST] - Depositar dinheiro em uma conta bancária - /bank/deposit
 <br/>
-POST -depositar dinheiro em uma conta bancaria - /bank/deposit
+[GET] - Buscar saldo  da conta - /bank/get-balance/:id
 <br/>
-GET -puxar saldo  da conta - /bank/get-balance/:id
-<br/>
-POST -realizar transferencia bancaria - /bank/transfer
-<br/>
-GET  -ver transferencias realizadas de um usuário - /bank/get-transfer/:id
-<br/>
+
+##Toda parte de transferências bancárias será realizada por um micro-serviço que terá um serviço de fila.
 
 **Tecnologias utilizadas**
 
 NodeJS - Express
 <br/>
 TypeScript
+<br/>
+Kafka
+<br/>
+MongoDB
